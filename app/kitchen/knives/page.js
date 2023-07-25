@@ -3,19 +3,19 @@ import Image from "next/image";
 
 const BlogArticle = () => {
   return (
-    <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+    <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
       <article className="prose lg:prose-xl mt-10">
         <h1 className="text-5xl font-bold tracking-tight text-gray-900">
           Article Title
         </h1>
-        {/* <Image
+        <Image
           src="https://placekitten.com/800/600"
           width={800}
           height={600}
           className="w-full object-cover object-center mt-12 rounded-lg shadow-md"
           alt="Article"
-        /> */}
-        <p className="mt-12">
+        />
+        <p className="mt-12 text-xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

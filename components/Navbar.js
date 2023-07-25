@@ -27,14 +27,14 @@ const NavBar = () => {
               onMouseLeave={() => toggleDropdown("kitchen")}
             >
               <button
-                className={`z-50 bg-white font-bold ${
+                className={`z-50 bg-white font-bold text-lg ${
                   dropdownOpen.kitchen ? "underline" : ""
                 }`}
               >
                 Kitchen
               </button>
               {dropdownOpen.kitchen && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded py-1 z-50">
+                <div className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded py-1 z-50 text-md">
                   <Link
                     href="/kitchen/knives"
                     className="block px-4 py-2 hover:text-gray-600"
@@ -56,7 +56,7 @@ const NavBar = () => {
               onMouseLeave={() => toggleDropdown("tech")}
             >
               <button
-                className={`z-50 bg-white font-bold ${
+                className={`z-50 bg-white font-bold text-lg ${
                   dropdownOpen.tech ? "underline" : ""
                 }`}
               >
@@ -105,7 +105,7 @@ const NavBar = () => {
       >
         <button
           onClick={() => toggleDropdown("kitchen")}
-          className="text-lg font-semibold flex justify-between items-center px-4"
+          className="text-xl font-semibold flex justify-between items-center px-4 py-2"
         >
           Kitchen
           <span className="transition-transform duration-200">
@@ -141,26 +141,28 @@ const NavBar = () => {
           </span>
         </button>
         <div
-          className={`transition-height duration-200 ease-in-out ${
-            dropdownOpen.kitchen ? "h-auto" : "h-0 overflow-hidden"
+          className={`transition-all duration-200 ease-in-out overflow-hidden ${
+            dropdownOpen.kitchen
+              ? "max-h-[1000px] opacity-100"
+              : "max-h-0 opacity-0"
           }`}
         >
           <Link
             href="/kitchen/knives"
-            className="block px-4 py-2 hover:bg-gray-200 rounded"
+            className="block px-4 pb-2 hover:bg-gray-200 rounded"
           >
             Knives
           </Link>
           <Link
             href="/kitchen/pots"
-            className="block px-4 py-2 hover:bg-gray-200 rounded"
+            className="block px-4 pb-2 hover:bg-gray-200 rounded"
           >
             Pots
           </Link>
         </div>
         <button
           onClick={() => toggleDropdown("tech")}
-          className="text-lg font-semibold flex justify-between items-center px-4"
+          className="text-xl font-semibold flex justify-between items-center px-4 py-2"
         >
           Tech
           <span className="transition-transform duration-200">
@@ -196,19 +198,21 @@ const NavBar = () => {
           </span>
         </button>
         <div
-          className={`transition-height duration-200 ease-in-out ${
-            dropdownOpen.tech ? "h-auto" : "h-0 overflow-hidden"
+          className={`transition-all duration-200 ease-in-out overflow-hidden ${
+            dropdownOpen.tech
+              ? "max-h-[1000px] opacity-100"
+              : "max-h-0 opacity-0"
           }`}
         >
           <Link
             href="/tech/phones"
-            className="block px-4 py-2 hover:bg-gray-200 rounded"
+            className="block px-4 pb-2 hover:bg-gray-200 rounded"
           >
             Phones
           </Link>
           <Link
             href="/tech/laptops"
-            className="block px-4 py-2 hover:bg-gray-200 rounded"
+            className="block px-4 pb-2 hover:bg-gray-200 rounded"
           >
             Laptops
           </Link>
