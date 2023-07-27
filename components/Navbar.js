@@ -17,8 +17,9 @@ const NavBar = () => {
     <>
       <nav className="px-4 py-2 flex justify-between items-center bg-white border-b-2 sticky top-0 z-50">
         <div className="flex justify-start w-full items-center">
-          <Link href="#" className="text-2xl font-bold text-violet-600">
-            CoomunityReco
+          <Link href="#" className="text-3xl font-bold">
+            <span className="">Standard</span>
+            <span className="text-red-600">pick</span>
           </Link>
           <div className="hidden lg:flex justify-start space-x-4 items-center ml-12">
             <div
