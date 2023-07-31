@@ -43,7 +43,6 @@ const BlogArticle = () => {
           alt="Article"
         />
       </div>
-
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl mb-24 flex flex-wrap justify-between">
         <article className="prose lg:prose-xl mt-10 md:w-8/12">
           <p className="text-lg mb-8 mt-12">
@@ -158,18 +157,21 @@ const BlogArticle = () => {
             journey, this knife is likely to be your best kitchen companion.
           </p>
 
-          <RedditEmbed embedCode={embedReddit1} />
+          <div className="max-w-full">
+            <RedditEmbed embedCode={embedReddit1} />
+          </div>
 
-          <RedditEmbed embedCode={embedReddit2} />
+          {/* <RedditEmbed embedCode={embedReddit2} />
 
-          <RedditEmbed embedCode={embedReddit3} />
-
-          <div
-            dangerouslySetInnerHTML={{ __html: embedCodeYoutube }}
-            className="mt-6 flex justify-center items-center"
-          />
+          <RedditEmbed embedCode={embedReddit3} /> */}
+          <div className="aspect-w-16 aspect-h-9 mt-6">
+            <div
+              dangerouslySetInnerHTML={{ __html: embedCodeYoutube }}
+              className="mt-6 flex justify-center items-center"
+            />
+          </div>
         </article>
-        <div className="lg:w-4/12 pl-8 pr-4 mb-8 prose lg:prose-xl mt-10">
+        <div className="lg:w-4/12 px-6 mb-8 prose lg:prose-xl mt-10">
           <div className="bg-gray-50 rounded p-3">
             <h2 className="text-2xl font-semibold mb-8">TL;DR</h2>
             <p className="text-lg">
