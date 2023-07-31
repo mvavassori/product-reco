@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="px-3 pt-4 lg:px-9 border-t-2 bg-gray-50">
+    <footer className="px-4 sm:px-6 lg:px-8 pt-4 border-t-2 bg-gray-50">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
           <Link href="#" className="inline-flex items-center">
