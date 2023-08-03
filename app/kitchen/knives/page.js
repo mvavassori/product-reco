@@ -43,7 +43,7 @@ const BlogArticle = () => {
           alt="Article"
         />
       </div>
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl mb-24 flex flex-wrap justify-between">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl mb-24 lg:flex">
         <article className="prose lg:prose-xl mt-10 md:w-8/12">
           <p className="text-lg mb-8 mt-12">
             A chef&apos;s knife is an essential tool in any kitchen. It&apos;s
@@ -160,14 +160,10 @@ const BlogArticle = () => {
           <div className="max-w-full">
             <RedditEmbed embedCode={embedReddit1} />
           </div>
-
-          {/* <RedditEmbed embedCode={embedReddit2} />
-
-          <RedditEmbed embedCode={embedReddit3} /> */}
-          <div className="aspect-w-16 aspect-h-9 mt-6">
+          <div className=" mt-6">
             <div
               dangerouslySetInnerHTML={{ __html: embedCodeYoutube }}
-              className="mt-6 flex justify-center items-center"
+              className="mt-6 flex justify-center items-center max-w-full"
             />
           </div>
         </article>
