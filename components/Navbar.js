@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const NavBar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -13,11 +13,41 @@ const NavBar = () => {
     }));
   };
 
+  // Function to close the dropdown menu when a subcategory link is clicked
+  const closeDropdownOnSubcategoryClick = (category) => {
+    setDropdownOpen((prev) => ({
+      ...prev,
+      [category]: false,
+    }));
+  };
+
+  // Add an event listener to handle link clicks in the mobile menu and logo
+  useEffect(() => {
+    const closeMenuOnLinkClick = () => {
+      setMenuOpen(false);
+    };
+    document.querySelectorAll(".mobile-menu-link").forEach((link) => {
+      link.addEventListener("click", closeMenuOnLinkClick);
+    });
+    document
+      .querySelector(".mobile-menu-logo")
+      .addEventListener("click", closeMenuOnLinkClick);
+    // Clean up the event listeners when the component is unmounted
+    return () => {
+      document.querySelectorAll(".mobile-menu-link").forEach((link) => {
+        link.removeEventListener("click", closeMenuOnLinkClick);
+      });
+      document
+        .querySelector(".mobile-menu-logo")
+        .removeEventListener("click", closeMenuOnLinkClick);
+    };
+  }, []);
+
   return (
     <>
       <nav className="px-4 py-2 items-center bg-white border-b-2 sticky top-0 z-50">
-        <div className="flex justify-between md:justify-start w-full items-center">
-          <Link href="/" className="text-3xl font-bold">
+        <div className="flex justify-between lg:justify-start w-full items-center">
+          <Link href="/" className="text-3xl font-bold mobile-menu-logo">
             <span className="">Standard</span>
             <span className="text-red-600">pick</span>
           </Link>
@@ -29,7 +59,9 @@ const NavBar = () => {
             >
               <button
                 className={`z-50 bg-white font-bold text-lg ${
-                  dropdownOpen.kitchen ? "underline" : ""
+                  dropdownOpen.kitchen
+                    ? "underline decoration-red-600 decoration-4"
+                    : ""
                 }`}
               >
                 Kitchen
@@ -38,13 +70,15 @@ const NavBar = () => {
                 <div className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded py-1 z-50 text-md">
                   <Link
                     href="/kitchen/knives"
-                    className="block px-4 py-2 hover:text-gray-600"
+                    className="block px-4 py-2 hover:text-gray-600 hover:underline"
+                    onClick={() => closeDropdownOnSubcategoryClick("kitchen")}
                   >
                     Knives
                   </Link>
                   <Link
                     href="/kitchen/pots"
-                    className="block px-4 py-2 hover:text-gray-600"
+                    className="block px-4 py-2 hover:text-gray-600 hover:underline"
+                    onClick={() => closeDropdownOnSubcategoryClick("kitchen")}
                   >
                     Pots
                   </Link>
@@ -58,7 +92,9 @@ const NavBar = () => {
             >
               <button
                 className={`z-50 bg-white font-bold text-lg ${
-                  dropdownOpen.tech ? "underline" : ""
+                  dropdownOpen.tech
+                    ? "underline decoration-red-600 decoration-4"
+                    : ""
                 }`}
               >
                 Tech
@@ -82,7 +118,7 @@ const NavBar = () => {
             </div>
           </div>
           <button
-            className="lg:hidden justify-end items-center text-violet-600 p-1"
+            className="lg:hidden items-center p-1"
             onClick={() => setMenuOpen(!isMenuOpen)}
           >
             <svg
@@ -98,9 +134,9 @@ const NavBar = () => {
       </nav>
       {/* Mobile navbar when click on Hamburger icon */}
       <nav
-        className={`fixed bg-white top-8 left-0 bottom-0 flex flex-col w-full max-w-full py-6 px-6 border-r overflow-y-auto transition-transform duration-200 ${
-          isMenuOpen ? "transform translate-x-0" : "transform -translate-x-full"
-        }`}
+        className={`fixed bg-white top-8 left-0 bottom-0 flex flex-col w-full max-w-full py-6 px-6 border-r transition-opacity duration-200 ${
+          isMenuOpen ? "opacity-100" : "opacity-0"
+        } transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <button
           onClick={() => toggleDropdown("kitchen")}
@@ -118,7 +154,7 @@ const NavBar = () => {
                 <path
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="square"
+                  strokeLinecap="square"
                   d="m1 10l6.5-7l6.5 7"
                 />
               </svg>
@@ -132,7 +168,7 @@ const NavBar = () => {
                 <path
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="square"
+                  strokeLinecap="square"
                   d="m14 5l-6.5 7L1 5"
                 />
               </svg>
@@ -148,20 +184,20 @@ const NavBar = () => {
         >
           <Link
             href="/kitchen/knives"
-            className="block px-4 pb-2 hover:bg-gray-200 rounded"
+            className="block px-4 pb-2 hover:bg-gray-200 rounded mobile-menu-link"
           >
             Knives
           </Link>
           <Link
             href="/kitchen/pots"
-            className="block px-4 pb-2 hover:bg-gray-200 rounded"
+            className="block px-4 pb-2 hover:bg-gray-200 rounded mobile-menu-link"
           >
             Pots
           </Link>
         </div>
         <button
           onClick={() => toggleDropdown("tech")}
-          className="text-xl font-semibold flex justify-between items-center px-4 py-2"
+          className="text-xl font-semibold flex justify-between items-center px-4 pb-2"
         >
           Tech
           <span className="transition-transform duration-200">
@@ -175,7 +211,7 @@ const NavBar = () => {
                 <path
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="square"
+                  strokeLinecap="square"
                   d="m1 10l6.5-7l6.5 7"
                 />
               </svg>
@@ -189,7 +225,7 @@ const NavBar = () => {
                 <path
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="square"
+                  strokeLinecap="square"
                   d="m14 5l-6.5 7L1 5"
                 />
               </svg>
@@ -205,13 +241,13 @@ const NavBar = () => {
         >
           <Link
             href="/tech/phones"
-            className="block px-4 pb-2 hover:bg-gray-200 rounded"
+            className="block px-4 pb-2 hover:bg-gray-200 rounded mobile-menu-link"
           >
             Phones
           </Link>
           <Link
             href="/tech/laptops"
-            className="block px-4 pb-2 hover:bg-gray-200 rounded"
+            className="block px-4 pb-2 hover:bg-gray-200 rounded mobile-menu-link"
           >
             Laptops
           </Link>
