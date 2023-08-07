@@ -7,17 +7,16 @@ const Footer = () => {
     <footer className="px-4 sm:px-6 lg:px-8 pt-4 border-t-2 bg-gray-50">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
-          <Link href="#" className="inline-flex items-center">
-            <Image
+          <Link href="#" className="inline-flex items-center text-xl font-bold">
+            {/* <Image
               src="https://mcqmate.com/public/images/logos/60x60.png"
               alt="logo"
               className="h-8 w-8"
               width={60}
               height={60}
-            />
-            <span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
-              Company Name
-            </span>
+            /> */}
+            <span className="">Standard</span>
+            <span className="text-red-600">pick</span>
           </Link>
           <div className="mt-6 lg:max-w-xl">
             <p className="text-sm text-gray-800">
