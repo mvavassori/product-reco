@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import RedditEmbed from "@/utils/RedditEmbeds";
 
-const KnivesArticle = () => {
+const PhonesArticle = () => {
   const embedReddit1 = `
   <blockquote class="reddit-embed-bq" data-embed-showtitle="true" data-embed-context="1" data-embed-depth="2" data-embed-showedits="false" data-embed-created="2023-07-27T13:49:28.421Z" data-embed-showusername="false" data-embed-height="356">
     <a href="https://www.reddit.com/r/BIFLKitchen/comments/11kz2m3/best_chefs_knife_to_get_in_2023_reddit_recommends/jb9zivx/">Comment</a><br> by
@@ -176,4 +176,4 @@ const KnivesArticle = () => {
   );
 };
 
-export default KnivesArticle;
+export default PhonesArticle;

@@ -46,12 +46,12 @@ const NavBar = () => {
   return (
     <>
       <nav className="px-4 py-2 items-center bg-white border-b-2 sticky top-0 z-50">
-        <div className="flex justify-between lg:justify-start w-full items-center">
+        <div className="flex justify-between md:justify-start w-full items-center">
           <Link href="/" className="text-3xl font-bold mobile-menu-logo">
             <span className="">Standard</span>
             <span className="text-red-600">pick</span>
           </Link>
-          <div className="hidden lg:flex justify-start space-x-4 items-center ml-12">
+          <div className="hidden md:flex justify-start space-x-4 items-center ml-12">
             <div
               className="relative"
               onMouseEnter={() => toggleDropdown("kitchen")}
@@ -103,13 +103,13 @@ const NavBar = () => {
                 <div className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded py-1 z-50">
                   <Link
                     href="/tech/phones"
-                    className="block px-4 py-2 hover:text-gray-600"
+                    className="block px-4 py-2 hover:text-gray-600 hover:underline"
                   >
                     Phones
                   </Link>
                   <Link
                     href="/tech/laptops"
-                    className="block px-4 py-2 hover:text-gray-600"
+                    className="block px-4 py-2 hover:text-gray-600 hover:underline"
                   >
                     Laptops
                   </Link>
@@ -118,7 +118,7 @@ const NavBar = () => {
             </div>
           </div>
           <button
-            className="lg:hidden items-center p-1"
+            className="md:hidden items-center p-1"
             onClick={() => setMenuOpen(!isMenuOpen)}
           >
             <svg
@@ -134,9 +134,9 @@ const NavBar = () => {
       </nav>
       {/* Mobile navbar when click on Hamburger icon */}
       <nav
-        className={`fixed bg-white top-8 left-0 bottom-0 flex flex-col w-full max-w-full py-6 px-6 border-r transition-opacity duration-200 ${
+        className={`fixed bg-white top-12 left-0 bottom-0 flex flex-col w-full max-w-full py-6 px-6 border-r transition-opacity duration-200 ${
           isMenuOpen ? "opacity-100" : "opacity-0"
-        } transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        } transform ${isMenuOpen ? "translate-x-0 z-50" : "translate-x-full"}`}
       >
         <button
           onClick={() => toggleDropdown("kitchen")}
@@ -184,13 +184,13 @@ const NavBar = () => {
         >
           <Link
             href="/kitchen/knives"
-            className="block px-4 pb-2 hover:bg-gray-200 rounded mobile-menu-link"
+            className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Knives
           </Link>
           <Link
             href="/kitchen/pots"
-            className="block px-4 pb-2 hover:bg-gray-200 rounded mobile-menu-link"
+            className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Pots
           </Link>
@@ -241,13 +241,13 @@ const NavBar = () => {
         >
           <Link
             href="/tech/phones"
-            className="block px-4 pb-2 hover:bg-gray-200 rounded mobile-menu-link"
+            className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Phones
           </Link>
           <Link
             href="/tech/laptops"
-            className="block px-4 pb-2 hover:bg-gray-200 rounded mobile-menu-link"
+            className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Laptops
           </Link>
