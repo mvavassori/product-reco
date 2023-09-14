@@ -7,6 +7,7 @@ const HomeTypewriter = () => {
     "best laptop 2023 reddit",
     "best kettles bifl",
     "best pots and pans reddit",
+    "best endurance bike for beginners reddit",
   ];
   let i = 0;
   let j = 0;

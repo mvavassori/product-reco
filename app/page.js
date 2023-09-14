@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import HomeTypewriter from "@/components/HomeTypewriter";
+import Posts from "@/components/Posts";
+
+export const metadata = {
+  title: "Standardpick",
+  description: "The place where people find real reviews from the web",
+};
 
 export default function Home() {
   return (
@@ -30,6 +36,9 @@ export default function Home() {
           <HomeTypewriter />
         </div>
       </section>
+
+      {/* Latest Posts */}
+      <Posts />
 
       {/* Introduction and Value Proposition */}
       <section className="bg-white py-16">
