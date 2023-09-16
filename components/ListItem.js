@@ -5,10 +5,10 @@ function ListItem({ post }) {
   const { id, title, excerpt, date } = post;
   const formattedDate = getFormattedDate(date);
   return (
-    <div key={id} className="bg-indigo-100 dark:bg-slate-800 rounded-lg p-4">
+    <div key={id} className="bg-gray-100 dark:bg-slate-800 rounded-lg p-4">
       <Link
         href={`/posts/${id}`}
-        className="text-xl font-bold hover:text-indigo-600 dark:hover:text-indigo-400"
+        className="text-xl font-bold hover:text-gray-600 dark:hover:text-gray-400"
       >
         {title}
       </Link>

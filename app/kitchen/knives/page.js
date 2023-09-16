@@ -23,6 +23,7 @@ const KnivesArticle = () => {
         <h1 className="text-5xl font-bold tracking-tight text-gray-900">
           Article Title
         </h1>
+        <h1>Ciao</h1>
         <Image
           src="https://cdn.shopify.com/s/files/1/0608/3313/6870/products/1030130120.png?v=1659365019"
           width={1362}
