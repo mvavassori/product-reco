@@ -48,8 +48,9 @@ const NavBar = () => {
       <nav className="px-4 py-2 items-center bg-white border-b-2 sticky top-0 z-50">
         <div className="flex justify-between md:justify-start w-full items-center">
           <Link href="/" className="text-3xl font-bold mobile-menu-logo">
-            <span className="">Standard</span>
+            <span className="">standard</span>
             <span className="text-red-600">pick</span>
+            <span className="text-lg">.com</span>
           </Link>
           <div className="hidden md:flex justify-start space-x-4 items-center ml-12">
             <div

@@ -8,6 +8,8 @@ export const metadata = {
   description: "The place where people find real reviews from the web",
 };
 
+export const revalidate = 86400;
+
 export default function Home() {
   return (
     <div>
