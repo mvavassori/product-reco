@@ -40,12 +40,12 @@ export default async function Post({ params: { postId } }) {
 
   return (
     <div className="px-6">
-      <div className=" px-4 sm:px-6 lg:px-8 max-w-5xl mt-10 mb-12">
+      <div className=" px-4 sm:px-6 lg:px-36 max-w-5xl mt-10 mb-12">
         <h1 className="text-4xl mt-4 mb-0 font-semibold">{meta.title}</h1>
         <p className="mt-2 text-xs">{pubDate}</p>
       </div>
 
-      <div className="px-4 sm:px-6 lg:px-8 mb-24 md:flex flex-col-reverse md:flex-row justify-between">
+      <div className="px-4 sm:px-6 lg:px-36 mb-24 md:flex flex-col-reverse md:flex-row justify-between">
         <article className="my-6 md:w-8/12 text-lg prose">{content}</article>
         <div className="md:w-4/12 mb-8 mt-10">
           <div className="bg-gray-50 rounded p-3">
