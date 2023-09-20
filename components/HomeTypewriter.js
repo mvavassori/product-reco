@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const HomeTypewriter = () => {
+export default function HomeTypewriter() {
   const words = [
     "best chef's knives reddit",
     "best laptop 2023 reddit",
@@ -50,7 +50,7 @@ const HomeTypewriter = () => {
   }, []);
 
   return (
-    <div className="w-full h-full flex justify-center items-center">
+    <section className="pt-4 container mx-auto text-center">
       <h1 className="text-4xl font-bold">
         {text}
         <span
@@ -59,8 +59,6 @@ const HomeTypewriter = () => {
           |
         </span>
       </h1>
-    </div>
+    </section>
   );
-};
-
-export default HomeTypewriter;
+}

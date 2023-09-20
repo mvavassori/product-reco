@@ -2,12 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="px-4 sm:px-6 lg:px-8 pt-4 border-t-2 bg-gray-50">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
-          <Link href="#" className="inline-flex items-center text-xl font-bold">
+          <Link href="#" className="text-xl font-bold">
             {/* <Image
               src="https://mcqmate.com/public/images/logos/60x60.png"
               alt="logo"
@@ -15,8 +15,9 @@ const Footer = () => {
               width={60}
               height={60}
             /> */}
-            <span className="">Standard</span>
+            <span className="">standard</span>
             <span className="text-red-600">pick</span>
+            <span className="text-xs">.com</span>
           </Link>
           <div className="mt-6 lg:max-w-xl">
             <p className="text-sm text-gray-800">
@@ -109,6 +110,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

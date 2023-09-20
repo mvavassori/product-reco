@@ -23,23 +23,16 @@ export default function Home() {
             Discover the best products based on real user feedback from Reddit
             and YouTube.
           </p>
-          <Link
+          {/* <Link
             href="#"
             className="bg-white text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-300"
           >
             Explore Reviews
-          </Link>
-        </div>
-      </section>
-
-      {/* Dynamic Search Text */}
-      <section className="bg-gray-200 py-8">
-        <div className="container mx-auto text-center">
+          </Link> */}
           <HomeTypewriter />
         </div>
       </section>
 
-      {/* Latest Posts */}
       <Posts />
 
       {/* Introduction and Value Proposition */}

@@ -1,7 +1,8 @@
 import getFormattedDate from "@/lib/getFormattedDate";
 import { getPostsMeta, getPostByName } from "@/lib/posts";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+// import Link from "next/link";
+import Image from "next/image";
 
 export const revalidate = 86400;
 
@@ -39,21 +40,35 @@ export default async function Post({ params: { postId } }) {
   const pubDate = getFormattedDate(meta.date);
 
   return (
-    <div className="px-6">
-      <div className=" px-4 sm:px-6 lg:px-36 max-w-5xl mt-10 mb-12">
-        <h1 className="text-4xl mt-4 mb-0 font-semibold">{meta.title}</h1>
-        <p className="mt-2 text-xs">{pubDate}</p>
+    <>
+      <div className="px-4 sm:px-6 lg:px-36 mt-10 mb-12">
+        <h1 className="text-4xl mt-4 mb-0 font-bold">{meta.title}</h1>
+        <div className="pt-2">
+          <span className="text-xs text-violet-700 font-semibold">
+            Updated{" "}
+          </span>
+          <span className="text-xs">{pubDate}</span>
+        </div>
+
+        <div className="relative w-full aspect-w-16 aspect-h-9">
+          <Image
+            src={meta.thumbnail}
+            fill
+            className="mt-12 rounded-lg shadow-md"
+            alt={`${meta.title} thumbanail's image`}
+          />
+        </div>
       </div>
 
       <div className="px-4 sm:px-6 lg:px-36 mb-24 md:flex flex-col-reverse md:flex-row justify-between">
         <article className="my-6 md:w-8/12 text-lg prose">{content}</article>
-        <div className="md:w-4/12 mb-8 mt-10">
+        <div className="md:w-4/12 mb-8 mt-10 ml-6">
           <div className="bg-gray-50 rounded p-3">
             <h3 className="text-xl font-semibold mb-8">TL;DR</h3>
-            <p className="">{meta.excerpt}</p>
+            <p className="">{meta.tldr}</p>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
