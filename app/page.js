@@ -1,10 +1,10 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import HomeTypewriter from "@/components/HomeTypewriter";
 import Posts from "@/components/Posts";
 
 export const metadata = {
-  title: "Standardpick",
+  title: "standardpick.com",
   description: "The place where people find real reviews from the web",
 };
 

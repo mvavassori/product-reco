@@ -9,6 +9,8 @@ export const revalidate = 86400;
 export async function generateStaticParams() {
   const posts = await getPostsMeta();
 
+  console.log("getPostsMeta()", posts);
+
   if (!posts) return [];
   return posts.map((post) => ({
     postId: post.id,
@@ -18,13 +20,21 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params: { postId } }) {
   const post = await getPostByName(`${postId}.mdx`);
 
+  console.log("getPostByName()", post);
+
   if (!post) {
     return {
       title: "Post Not Found",
+      description: "This post does not exist",
+      date: "",
+      thumbnail: "",
     };
   }
   return {
-    title: post.title,
+    title: post.meta.title,
+    description: post.meta.excerpt,
+    date: post.meta.date,
+    thumbnail: post.meta.thumbnail,
   };
 }
 
