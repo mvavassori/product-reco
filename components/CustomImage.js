@@ -9,8 +9,8 @@ export default function CustomImage({ src, alt, priority }) {
         className="rounded-lg mx-auto"
         src={src}
         alt={alt}
-        width={100}
-        height={100}
+        width={600}
+        height={400}
         priority={prty}
       />
     </div>

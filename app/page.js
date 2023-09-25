@@ -21,7 +21,7 @@ export default function Home() {
           </h1>
           <p className="text-lg mb-8">
             Discover the best products based on real user feedback from Reddit
-            and YouTube.
+            and other popular communities.
           </p>
           {/* <Link
             href="#"
@@ -36,7 +36,7 @@ export default function Home() {
       <Posts />
 
       {/* Introduction and Value Proposition */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-16 sm:px-6 lg:px-40">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Why Choose Our Reviews?</h2>
           <p className="text-lg mb-8">
@@ -61,9 +61,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </div>
+  );
+}
 
-      {/* Category Highlights */}
-      <section className="bg-gray-100 py-16">
+{
+  /* Category Highlights */
+}
+{
+  /* <section className="bg-gray-100 py-16 sm:px-6 lg:px-36">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Explore Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -95,15 +101,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */
+}
 
-      {/* Reddit and YouTube Integrations */}
-      <section className="bg-white py-16">
+{
+  /* Reddit and YouTube Integrations */
+}
+{
+  /* <section className="bg-white py-16 sm:px-6 lg:px-36">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">What Our Community Says</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              {/* Reddit Integration */}
+              
               <div className="bg-gray-200 p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-2">Reddit Reviews</h3>
                 <p className="text-gray-700">
@@ -119,7 +129,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              {/* YouTube Integration */}
+              
               <div className="bg-gray-200 p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-2">YouTube Reviews</h3>
                 <p className="text-gray-700">
@@ -136,7 +146,5 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
-  );
+      </section> */
 }

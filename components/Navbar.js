@@ -55,6 +55,39 @@ export default function NavBar() {
           <div className="hidden md:flex justify-start space-x-4 items-center ml-12">
             <div
               className="relative"
+              onMouseEnter={() => toggleDropdown("sports")}
+              onMouseLeave={() => toggleDropdown("sports")}
+            >
+              <button
+                className={`z-50 bg-white font-bold text-lg ${
+                  dropdownOpen.sports
+                    ? "underline decoration-red-600 decoration-4"
+                    : ""
+                }`}
+              >
+                Sports
+              </button>
+              {dropdownOpen.sports && (
+                <div className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded py-1 z-50 text-md">
+                  <Link
+                    href="/posts/road-bikes"
+                    className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
+                    onClick={() => closeDropdownOnSubcategoryClick("sports")}
+                  >
+                    Road Bikes
+                  </Link>
+                  <Link
+                    href="/posts/running-shoes"
+                    className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
+                    onClick={() => closeDropdownOnSubcategoryClick("sports")}
+                  >
+                    Running Shoes
+                  </Link>
+                </div>
+              )}
+            </div>
+            <div
+              className="relative"
               onMouseEnter={() => toggleDropdown("kitchen")}
               onMouseLeave={() => toggleDropdown("kitchen")}
             >
@@ -71,14 +104,14 @@ export default function NavBar() {
                 <div className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded py-1 z-50 text-md">
                   <Link
                     href="/kitchen/knives"
-                    className="block px-4 py-2 hover:text-gray-600 hover:underline"
+                    className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                     onClick={() => closeDropdownOnSubcategoryClick("kitchen")}
                   >
                     Knives
                   </Link>
                   <Link
                     href="/kitchen/pots"
-                    className="block px-4 py-2 hover:text-gray-600 hover:underline"
+                    className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                     onClick={() => closeDropdownOnSubcategoryClick("kitchen")}
                   >
                     Pots
@@ -104,13 +137,13 @@ export default function NavBar() {
                 <div className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded py-1 z-50">
                   <Link
                     href="/tech/phones"
-                    className="block px-4 py-2 hover:text-gray-600 hover:underline"
+                    className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                   >
                     Phones
                   </Link>
                   <Link
                     href="/tech/laptops"
-                    className="block px-4 py-2 hover:text-gray-600 hover:underline"
+                    className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                   >
                     Laptops
                   </Link>
@@ -140,8 +173,65 @@ export default function NavBar() {
         } transform ${isMenuOpen ? "translate-x-0 z-50" : "translate-x-full"}`}
       >
         <button
-          onClick={() => toggleDropdown("kitchen")}
+          onClick={() => toggleDropdown("sports")}
           className="text-xl font-semibold flex justify-between items-center px-4 py-2"
+        >
+          Sports
+          <span className="transition-transform duration-200">
+            {dropdownOpen.sports ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="square"
+                  d="m1 10l6.5-7l6.5 7"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="square"
+                  d="m14 5l-6.5 7L1 5"
+                />
+              </svg>
+            )}
+          </span>
+        </button>
+        <div
+          className={`transition-all duration-200 ease-in-out overflow-hidden ${
+            dropdownOpen.sports
+              ? "max-h-[1000px] opacity-100"
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <Link
+            href="/posts/road-bikes"
+            className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
+          >
+            Beginner Road Bikes
+          </Link>
+          <Link
+            href="/posts/running-shoes"
+            className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
+          >
+            Best Road Bikes
+          </Link>
+        </div>
+        <button
+          onClick={() => toggleDropdown("kitchen")}
+          className="text-xl font-semibold flex justify-between items-center px-4 pb-2"
         >
           Kitchen
           <span className="transition-transform duration-200">
