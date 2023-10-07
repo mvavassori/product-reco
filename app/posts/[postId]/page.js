@@ -9,7 +9,7 @@ export const revalidate = 86400;
 export async function generateStaticParams() {
   const posts = await getPostsMeta();
 
-  console.log("getPostsMeta()", posts);
+  // console.log("getPostsMeta()", posts);
 
   if (!posts) return [];
   return posts.map((post) => ({
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params: { postId } }) {
   const post = await getPostByName(`${postId}.mdx`);
 
-  console.log("getPostByName()", post);
+  // console.log("getPostByName()", post);
 
   if (!post) {
     return {

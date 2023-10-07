@@ -12,7 +12,9 @@ export default async function Posts() {
 
   return (
     <section className="container mx-auto my-6 sm:px-6 lg:px-36">
-      <h2 className="mt-8 mb-6 text-4xl font-bold">The Latest Reviews</h2>
+      <h2 className="mt-8 mb-6 text-4xl font-bold text-center">
+        The Latest Reviews
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* just the last 4 posts will be displayed in the home page */}
         {posts.slice(0, 4).map((post) => (

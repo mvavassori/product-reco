@@ -8,16 +8,16 @@ export default function ListItem({ post }) {
   return (
     <div key={id} className="bg-white shadow-md rounded-lg overflow-hidden">
       <div className="p-4 flex flex-col h-full">
-        <div className="relative overflow-hidden aspect-ratio-3/2">
+        <div className="relative overflow-hidden">
           <Link href={`/posts/${id}`}>
             <Image
-              width={300}
+              width={400}
               height={200}
               quality={100}
               priority={true}
               src={thumbnail}
               alt={`${title} thumbnail's image`}
-              className="w-full h-full object-cover object-center rounded-lg"
+              className="w-full h-80 object-scale-down object-center rounded-lg"
             />
           </Link>
         </div>
