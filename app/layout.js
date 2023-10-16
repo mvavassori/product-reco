@@ -4,7 +4,8 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Standardpick",
-  description: "The best product picks, without choice overload.",
+  description:
+    "The best product picks, without choice overload. Just one winner for every product category.",
 };
 
 export default function RootLayout({ children }) {

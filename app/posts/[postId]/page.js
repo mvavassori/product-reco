@@ -57,14 +57,14 @@ export default async function Post({ params: { postId } }) {
           <span className="text-xs text-violet-700 font-semibold">
             Updated{" "}
           </span>
-          <span className="text-xs">{pubDate}</span>
+          <date className="text-xs">{pubDate}</date>
         </div>
 
-        <div className="relative w-full aspect-w-16 aspect-h-11">
+        <div className="relative w-full aspect-w-16 aspect-h-9">
           <Image
             src={meta.thumbnail}
             fill
-            className="mt-12 rounded-lg shadow-md object-cover object-center"
+            className="mt-12 object-center object-scale-down"
             alt={`${meta.title} thumbanail's image`}
           />
         </div>

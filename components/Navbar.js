@@ -109,13 +109,13 @@ export default function NavBar() {
                   >
                     Knives
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/kitchen/pots"
                     className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                     onClick={() => closeDropdownOnSubcategoryClick("kitchen")}
                   >
                     Pots
-                  </Link>
+                  </Link> */}
                 </div>
               )}
             </div>
@@ -136,17 +136,17 @@ export default function NavBar() {
               {dropdownOpen.tech && (
                 <div className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded py-1 z-50">
                   <Link
-                    href="/tech/phones"
+                    href="/posts/phones"
                     className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                   >
                     Phones
                   </Link>
-                  <Link
-                    href="/tech/laptops"
+                  {/* <Link
+                    href="/posts/laptops"
                     className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                   >
                     Laptops
-                  </Link>
+                  </Link> */}
                 </div>
               )}
             </div>
@@ -279,12 +279,12 @@ export default function NavBar() {
           >
             Knives
           </Link>
-          <Link
+          {/* <Link
             href="/kitchen/pots"
             className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Pots
-          </Link>
+          </Link> */}
         </div>
         <button
           onClick={() => toggleDropdown("tech")}
@@ -331,17 +331,17 @@ export default function NavBar() {
           }`}
         >
           <Link
-            href="/tech/phones"
+            href="/posts/phones"
             className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Phones
           </Link>
-          <Link
-            href="/tech/laptops"
+          {/* <Link
+            href="/posts/laptops"
             className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Laptops
-          </Link>
+          </Link> */}
         </div>
       </nav>
     </>

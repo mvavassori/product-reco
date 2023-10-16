@@ -10,7 +10,16 @@ export const revalidate = 86400;
 
 export default function Home() {
   return (
-    <div>
+    <>
+      {/* Disclaimer Section */}
+      <section className="py-1 bg-red-200">
+        <div className="text-center">
+          <p className="ml-2 text-sm">
+            We&apos;re actively working to cover more categories.
+          </p>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="bg-gray-200 py-16 sm:px-6 lg:px-40">
         <div className="container mx-auto text-center">
@@ -171,7 +180,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
 
