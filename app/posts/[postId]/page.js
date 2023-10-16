@@ -57,7 +57,7 @@ export default async function Post({ params: { postId } }) {
           <span className="text-xs text-violet-700 font-semibold">
             Updated{" "}
           </span>
-          <date className="text-xs">{pubDate}</date>
+          <span className="text-xs">{pubDate}</span>
         </div>
 
         <div className="relative w-full aspect-w-16 aspect-h-9">
