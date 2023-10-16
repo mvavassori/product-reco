@@ -103,14 +103,14 @@ export default function NavBar() {
               {dropdownOpen.kitchen && (
                 <div className="absolute left-1/2 transform -translate-x-1/2 bg-white rounded py-1 z-50 text-md">
                   <Link
-                    href="/kitchen/knives"
+                    href="/posts/kitchen-knives"
                     className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                     onClick={() => closeDropdownOnSubcategoryClick("kitchen")}
                   >
                     Knives
                   </Link>
                   {/* <Link
-                    href="/kitchen/pots"
+                    href="/posts/pots"
                     className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                     onClick={() => closeDropdownOnSubcategoryClick("kitchen")}
                   >
@@ -274,13 +274,13 @@ export default function NavBar() {
           }`}
         >
           <Link
-            href="/kitchen/knives"
+            href="/posts/kitchen-knives"
             className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Knives
           </Link>
           {/* <Link
-            href="/kitchen/pots"
+            href="/posts/pots"
             className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Pots
