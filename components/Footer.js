@@ -28,33 +28,29 @@ export default function Footer() {
           </p>
           <div className="flex">
             <p className="mr-1 text-gray-800">email:</p>
-            <Link href="" title="send email">
+            <a
+              href="mailto:hello@standardpick.com"
+              className=""
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               hello@standardpick.com
-            </Link>
+            </a>
           </div>
         </div>
       </div>
       <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
         <p className="text-sm text-gray-600">
-          © Copyright 2023 standardpick. All rights reserved.
+          © Copyright 2023 Standardpick. All rights reserved.
         </p>
         <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
           <li>
             <Link
-              href="#"
+              href="/privacy-policy"
               className="text-sm text-gray-600 transition-colors
               duration-300 hover:text-deep-purple-accent-400"
             >
               Privacy &amp; Cookies Policy
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="text-sm text-gray-600 transition-colors
-              duration-300 hover:text-deep-purple-accent-400"
-            >
-              Disclaimer
             </Link>
           </li>
         </ul>
