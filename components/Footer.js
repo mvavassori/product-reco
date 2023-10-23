@@ -1,13 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="px-4 sm:px-6 lg:px-8 pt-4 border-t-2 bg-gray-50">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2">
-          <Link href="#" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold">
             <span className="">standard</span>
             <span className="text-red-600">pick</span>
             <span className="text-xs">.com</span>
@@ -37,6 +36,14 @@ export default function Footer() {
               hello@standardpick.com
             </a>
           </div>
+        </div>
+        <div>
+          <Link
+            className="text-base font-bold tracking-wide text-gray-900"
+            href="/posts"
+          >
+            All Articles
+          </Link>
         </div>
       </div>
       <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
