@@ -141,12 +141,12 @@ export default function NavBar() {
                   >
                     Phones
                   </Link>
-                  {/* <Link
+                  <Link
                     href="/posts/laptops"
                     className="block px-4 py-2 hover:text-red-600 hover:underline whitespace-nowrap overflow-hidden"
                   >
                     Laptops
-                  </Link> */}
+                  </Link>
                 </div>
               )}
             </div>
@@ -336,12 +336,12 @@ export default function NavBar() {
           >
             Phones
           </Link>
-          {/* <Link
+          <Link
             href="/posts/laptops"
             className="block px-4 pb-2 active:text-red-600 rounded mobile-menu-link"
           >
             Laptops
-          </Link> */}
+          </Link>
         </div>
       </nav>
     </>
